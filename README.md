@@ -23,6 +23,9 @@ This project contains
 
 - TODO
 
+git clone https://github.com/Avimesa/virtual-device-client-x86-64.git
+sudo cp virtual-device-client-x86-64/avmsavdc /usr/local/bin
+
 
 [Top](#toc)<br>
 <a id="3.-usage"></a>

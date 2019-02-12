@@ -1,13 +1,14 @@
 // Basic example, logs messages received from sensors through the gateway.
 
 const gateway = require('conectric-usb-gateway');
+const vdc = require('@avimesa/virtual-device');
 
 gateway.runGateway({
 	onSensorMessage: (sensorMessage) => {
 		//
 		// Massage Conectric message into Avimesa
 		//
-		var avmsaModel = models.fromConectric(sensorMessage);
+		var avmsaModel = vdc.fromConectric(sensorMessage);
 		var jsonMsg = JSON.stringify(avmsaModel);
 
 		//
@@ -22,10 +23,10 @@ gateway.runGateway({
 		// Send request using Avimesa Virtual Device
 		//
 
-		deviceCloud.sync(deviceId,
+		vdc.sync(deviceId,
 			authKey,
 			jsonMsg,
-			function (err, jsonResp) {
+			function (err, jsonResp, errResp) {
 				//
 				// Handle Response
 				//

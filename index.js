@@ -1,4 +1,7 @@
 'use strict';
 
-module.exports = require('./lib');
-
+module.exports = Object.assign(
+	{},
+	require('./lib/cloud'),
+	require('./lib/models'),
+);
