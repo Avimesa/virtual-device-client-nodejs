@@ -4,6 +4,7 @@
   "description": "Avimesa Virtual Device Client",
   "main": "index.js",
   "scripts": {
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Avimesa/virtual-device-client-nodejs/issues"
   },
-  "homepage": "https://github.com/Avimesa/virtual-device-client-nodejs#readme"
+  "homepage": "https://github.com/Avimesa/virtual-device-client-nodejs#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
 }

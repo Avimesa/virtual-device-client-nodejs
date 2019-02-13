@@ -5,16 +5,12 @@ const vdc = require('@avimesa/virtual-device');
 
 gateway.runGateway({
 	onSensorMessage: (sensorMessage) => {
-		//
-		// Massage Conectric message into Avimesa
-		//
-		var avmsaModel = vdc.fromConectric(sensorMessage);
-		var jsonMsg = JSON.stringify(avmsaModel);
+		let cloudMessage = adpater.conectric(sensorMessage);
 
 		//
 		// Use short ID and temporary hack to get authentication key
 		//
-		var deviceId = avmsaModel.dev.dev_id;
+		var deviceId = cloudMessage.dev.dev_id;
 		var authKey = temporaryHack(deviceId);
 
 		console.log(`${deviceId} >>`);
