@@ -7,14 +7,15 @@ gateway.runGateway({
 	onSensorMessage: (sensorMessage) => {
 
 		//
-		// TODO: Hack
+		// TODO: Remove Hack
 		//
 		sensorMessage.sensorId = "cccc0000cccc0000000000000000" + sensorMessage.sensorId;
+		//
 
 		let cloudMessage = vdc.conectric(sensorMessage);
 
 		//
-		// TODO: HACK
+		// TODO: Remove Hack
 		//
 		// Use short ID and temporary hack to get authentication key
 		//
@@ -25,35 +26,24 @@ gateway.runGateway({
 		//
 		// Send request using Avimesa Virtual Device
 		//
-
-		vdc.sync(deviceId,
-			authKey,
-			cloudMessage,
-			function (err, jsonResp, errResp) {
-				//
-				// Handle Response
-				//
-
-				// TODO: err is always true?
-
-				if(errResp){
-					console.log("err: " + errResp);
-				}
-				else {
-					var resp = JSON.parse(jsonResp);
-					if (resp.dev.dev_cmd) {
-						console.log(`${deviceId} << Pending Command - ${resp.dev.dev_cmd.dev_cmd_id}`);
-					} else {
-						console.log(`${deviceId} << No command...`);
-					}
+		vdc.sync(deviceId, authKey, cloudMessage, function(err, cloudResponse, errResp) {
+			if(err){
+				console.log("VDC Error: " + errResp);
+			}
+			else {
+				let cloudResponseObj = JSON.parse(cloudResponse);
+				if (cloudResponseObj.dev.dev_cmd) {
+					console.log(`${deviceId} << Pending Command - ${cloudResponseObj.dev.dev_cmd.dev_cmd_id}`);
+				} else {
+					console.log(`${deviceId} << No command...`);
 				}
 			}
-		);
+		});
 	}
 });
 
 //
-// TODO: HACK
+// TODO: Remove Hack
 //
 temporaryHack = function(deviceId){
 	var map = {};
