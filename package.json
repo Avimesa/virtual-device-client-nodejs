@@ -4,7 +4,10 @@
   "description": "Avimesa Virtual Device Client",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "start": "node examples/general/index.js",
+    "test": "mocha",
+    "install": "bin/native-vdc.sh install",
+    "uninstall": "bin/native-vdc.sh uninstall"
   },
   "repository": {
     "type": "git",
