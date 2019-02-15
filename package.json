@@ -19,7 +19,7 @@
     "url": "https://github.com/Avimesa/virtual-device-client-nodejs/issues"
   },
   "homepage": "https://github.com/Avimesa/virtual-device-client-nodejs#readme",
-  "dependencies": {
+  "devDependencies": {
     "mocha": "^5.2.0"
   }
 }

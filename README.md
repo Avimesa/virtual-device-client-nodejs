@@ -1,9 +1,5 @@
-# Avimesa Virtual Device (Node.js)
-Avimesa Virtual Device Client for Node.js
-
-## Introduction
-
-This project contains 
+# Avimesa Virtual Device (Node.js) (alpha)
+*last updated 2019-Feb-15*
 
 <a id="toc"></a>
 ## Table of Contents
@@ -11,27 +7,24 @@ This project contains
 - [2. Prerequisites](#2.-prerequisites)
 - [3. Usage](#3.-usage)
 - [4. Examples](#4.-examples)
-    - [4.1-examples](#4.1-examples)
+    - [4.1 General Use Case](#4.1-examples)
+    - [4.2 Conectric USB Gateway](#4.2-examples)
 
 
 <a id="1.-overview"></a>
 ## 1. Overview
 
+The Avimesa Virtual Device Client (VDC) is a native command line utility that allows one to easily build Avimesa Device clients without having to do any of the hard coding!
+
+
 [Top](#toc)<br>
 <a id="2.-prerequisites"></a>
 ## 2. Prerequisites
 
-- TODO
-
-git clone https://github.com/Avimesa/virtual-device-client-x86-64.git
-sudo cp virtual-device-client-x86-64/avmsavdc /usr/local/bin
-
-
-[Top](#toc)<br>
-<a id="3.-usage"></a>
-## 3. Usage
-
-- TODO
+- Node.js
+- A valid Avimesa Device Cloud **Device ID** and associated **Authentication Key**
+- The ability to run the `npm` command as root (**sudo**) to install the command line utility to /usr/local/bin
+- **For some examples below**, there may be other requirements that should be followed.  Reference the example that is being used below for more information.
 
 
 [Top](#toc)<br>
@@ -40,7 +33,34 @@ sudo cp virtual-device-client-x86-64/avmsavdc /usr/local/bin
 
 
 <a id="4.1-examples"></a>
-### Connectric USB Gateway
+### 4.1 General Use Case
 
 ##### Summary:
 
+##### Usage:
+
+<a id="4.2-examples"></a>
+### 4.2 Connectric USB Gateway
+
+##### Summary:
+
+This project can be used to enable the [Conectric USB Gatway](https://github.com/Conectric/conectric-usb-gateway) to be used with the Avimesa Device Cloud.
+
+##### Prerequisites:
+
+- A Raspberry Pi 3B/3B+ to be used as the gateway host
+- Please follow the Quick Start located at the [Conectric USB Gatway](https://github.com/Conectric/conectric-usb-gateway) GitHub page to setup the RPi with the default Conectric USB Gateway
+
+##### Usage:
+
+After following the Prerequisites above, you should have an `iotgateway` npm project.  To enable the gateway with the Avimesa Device Cloud:
+
+**Note:** the following command needs to be ran with `sudo` to install the native client to /usr/local/bin
+
+```
+sudo npm install @avimesa/virtual-device
+cp node_modules/@avimesa/virtual-device/examples/conectric/server.js .
+npm start
+```
+
+[Top](#toc)<br>
