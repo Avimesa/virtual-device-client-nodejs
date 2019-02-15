@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node examples/general/index.js",
     "test": "mocha",
-    "install": "bin/native-vdc.sh install",
-    "uninstall": "bin/native-vdc.sh uninstall"
+    "install": "sudo bin/native-vdc.sh install",
+    "uninstall": "sudo bin/native-vdc.sh uninstall"
   },
   "repository": {
     "type": "git",
