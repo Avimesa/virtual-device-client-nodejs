@@ -47,7 +47,7 @@ gateway.runGateway({
 //
 temporaryHack = function(deviceId){
 	var map = {};
-	map["cccc0000cccc00000000000000001708"] = "fa73786445d148e9b3fb061a0e401d6c";
-	map["cccc0000cccc000000000000000020ae"] = "0f6535da825244e8b6d19658f68903b7";
+	map["0"] = "0";
+	map["1"] = "1";
 	return map[deviceId];
 };
