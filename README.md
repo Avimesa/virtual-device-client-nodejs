@@ -37,7 +37,20 @@ The Avimesa Virtual Device Client (VDC) is a native command line utility that al
 
 ##### Summary:
 
+This project can be used to enable a Raspberry Pi to be an Avimesa Device client.
+
+##### Prerequisites:
+
+- A Raspberry Pi 3B/3B+ to be used as the gateway host
+- Node.js 10
+
 ##### Usage:
+
+```
+sudo npm install @avimesa/virtual-device
+cp node_modules/@avimesa/virtual-device/examples/generic/index.js .
+npm start
+```
 
 <a id="4.2-examples"></a>
 ### 4.2 Connectric USB Gateway
