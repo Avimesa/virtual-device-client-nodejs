@@ -43,12 +43,22 @@ This project can be used to enable a Raspberry Pi to be an Avimesa Device client
 
 - A Raspberry Pi 3B/3B+ to be used as the gateway host
 - Node.js 10
+- Ability to use `root` user
 
 ##### Usage:
 
 ```
-sudo npm install @avimesa/virtual-device
-cp node_modules/@avimesa/virtual-device/examples/generic/index.js .
+su
+git clone https://github.com/Avimesa/virtual-device-client-nodejs.git
+cd virtual-device-client-nodejs
+npm install
+```
+
+Now, update the `examples/general/index.js` file with a valid `deviceId` and `authKey`.  This can be generated at app.avimesa.com.
+
+Run the example and observe the response.
+
+```
 npm start
 ```
 
