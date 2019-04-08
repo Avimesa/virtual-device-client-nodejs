@@ -1,6 +1,6 @@
 {
   "name": "@avimesa/virtual-device",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Avimesa Virtual Device Client",
   "main": "index.js",
   "scripts": {
