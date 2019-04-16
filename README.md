@@ -63,7 +63,7 @@ npm start
 ```
 
 <a id="4.2-examples"></a>
-### 4.2 Connectric USB Gateway
+### 4.2 Conectric USB Gateway
 
 ##### Summary:
 
